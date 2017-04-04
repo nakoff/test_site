@@ -2,6 +2,7 @@
 
 {% block content %}
 	<p><h2><a href="">Новый участник +</a></h2></p>
+	<a href="{% url 'add_user' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
 	<br><br>
 	<p><h3>___________Все участники_____________</h3></p>
 	{% for u in user %}

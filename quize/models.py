@@ -8,14 +8,14 @@ class User(models.Model):
 	def __str__(self):
 		return self.user
 
-class Vid(models.Model):
+class Category(models.Model):
 	user  = models.ForeignKey(User)
-	vid = models.CharField(max_length=100)
+	cat = models.CharField(max_length=100)
 	def __str__(self):
-		return self.vid
+		return self.cat
 
-class Kon(models.Model):
-	vid  = models.ForeignKey(Vid)
+class Contest(models.Model):
+	cat  = models.ForeignKey(Category)
 	name = models.CharField(max_length=200)
 	date = models.CharField(max_length=200)
 	result = models.CharField(max_length=20)
