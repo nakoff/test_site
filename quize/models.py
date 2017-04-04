@@ -1,6 +1,6 @@
 from django.db import models
 
-class Post(models.Model):
+class User(models.Model):
 	user = models.CharField(max_length=50)
 	def publish(self):
 		self.save()
@@ -9,7 +9,7 @@ class Post(models.Model):
 		return self.user
 
 class Vid(models.Model):
-	post  = models.ForeignKey(Post)
+	user  = models.ForeignKey(User)
 	vid = models.CharField(max_length=100)
 	def __str__(self):
 		return self.vid

@@ -1,16 +1,16 @@
-    <html>
-        <head>
-            <title>my site</title>
-        </head>
-        <body>
-            <p>Hi there!</p>
-            <div>
-	            {% for p in post  %}
-	            	<h1><li><a href="">{{p}}</a></li></h1>
-	            {% endfor %}
-            </div>
+{% extends 'quize/base.html' %}
 
-            <br><br><br>
-            <div> {{post}} </div>
-        </body>
-    </html>
+{% block content %}
+	{% for k in konkurs %}
+	    <div class="post">
+	        <div class="date">
+	            {{ k.vid.user }}
+	        </div>
+	        <h1><a href="">{{ k }}</a></h1>
+	        <p>{{k.vid}}</p>
+	        <p>{{k.result}}</p>
+	        <p>{{k.date}}</p>
+	    </div>
+	{% endfor %}	
+{% endblock content %}
+

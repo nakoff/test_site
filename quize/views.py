@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from .models import Post 
+from .models import User, Kon
 
 # Create your views here.
 def post_list(request):
-	post = Post.objects.all()
-	return render(request, 'quize/post_list.html', {'post':post})
+	konkurs = Kon.objects.all()
+	return render(request, 'quize/post_list.html', {'konkurs':konkurs})
