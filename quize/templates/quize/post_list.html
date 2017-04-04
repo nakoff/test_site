@@ -5,8 +5,6 @@
 	<br><br>
 	<p><h3>___________Все участники_____________</h3></p>
 	{{user}}
-	{% for u in user %}
-		<h1><a href="{% url 'user_detail' pk=u.pk %}">имя = {{u}}</a></h1>
-	{% endfor %}
+
 {% endblock content %}
 
