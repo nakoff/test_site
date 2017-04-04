@@ -37,9 +37,14 @@ h4 {
     color: #00619e;
 }
 
-.date {
+.user {
     float: right;
     color: #FCA205;
+}
+
+.back {
+    float: right;
+    color: #2a8d9c;
 }
 
 .save {
