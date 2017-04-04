@@ -1,0 +1,26 @@
+   {% extends 'quize/base.html' %}
+
+    {% block content %}
+        <div class="post">
+
+            <div class="date">
+                <h1>Участник: {{ user }}</h1>
+            </div>
+             
+             <div class="save">
+                <h1>Конкурсы:</h1>
+                <p>_______________________________</p>
+
+                {% for k in konkurs  %}
+                    {% if k.vid.user == user %}
+                        <h3><p>категория: {{k.vid}}</p></h3>
+                        <h4><p align="center">название конкурса: <b>{{k.name}}</b></p></h4>
+                        <h4><p align="center">дата проведения: <b>{{k.date}}</b></p></h4>
+                        <h4><p align="center">занятое место: <b>{{k.result}}</b></p></h4>
+                        <h4><p>_______________________________</p></h4>
+                    {% endif %}
+                {% endfor %}
+             </div>
+
+        </div>
+    {% endblock %}

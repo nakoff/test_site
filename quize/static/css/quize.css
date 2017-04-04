@@ -23,17 +23,27 @@ body {
     margin-left: 40px;
 }
 
-h1, h2, h3, h4 {
+h1, h2 {
     font-family: 'Lobster', cursive;
+}
+
+h3 {
+    font-family: 'Lobster', cursive;
+    color: #543964;
+}
+
+h4 {
+    font-family: 'Neucha', cursive;
+    color: #00619e;
 }
 
 .date {
     float: right;
-    color: #828282;
+    color: #FCA205;
 }
 
 .save {
-    float: right;
+    float: left;
 }
 
 .post-form textarea, .post-form input {
