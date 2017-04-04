@@ -4,6 +4,13 @@
         </head>
         <body>
             <p>Hi there!</p>
-            <p>It works!</p>
+            <div>
+	            {% for p in post  %}
+	            	<h1><li><a href="">{{p}}</a></li></h1>
+	            {% endfor %}
+            </div>
+
+            <br><br><br>
+            <div> {{post}} </div>
         </body>
     </html>
