@@ -17,7 +17,7 @@
                     {% if k.cat.user == user %}
                         <h3><p>категория: {{k.cat}}</p></h3>
                         <h4><p align="center">название конкурса: <b>{{k.name}}</b></p></h4>
-                        <h4><p align="center">дата проведения: <b>{{k.date}}</b></p></h4>
+                        <h4><p align="center">дата проведения: <b>{{k.day}}/{{k.mont}}/{{k.year}}</b></p></h4>
                         <h4><p align="center">занятое место: <b>{{k.result}}</b></p></h4>
                         <h4><p>_______________________________</p></h4>
                     {% endif %}
