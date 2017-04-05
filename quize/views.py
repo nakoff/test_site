@@ -47,7 +47,7 @@ def add_cat(request, pk):
 			return redirect('add_cont', pk=cat.id)
 	else:
 		form = CategoryForm()
-		return render(request, 'quize/add_cat.html', {'form': form, 'title':title})
+		return render(request, 'quize/add_user.html', {'form': form, 'title':title})
 
 def add_cont(request, pk):
 	title = "введите название конкурса, выберите дату проведения и занятое место"
