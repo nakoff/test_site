@@ -10,7 +10,7 @@ class User(models.Model):
 
 class Category(models.Model):
 	user  = models.ForeignKey(User)
-	cat = models.CharField(max_length=100)
+	cat = models.CharField(max_length=200)
 	def __str__(self):
 		return self.cat
 
@@ -21,3 +21,4 @@ class Contest(models.Model):
 	result = models.CharField(max_length=20)
 	def __str__(self):
 		return self.name
+

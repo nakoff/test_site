@@ -1,9 +1,20 @@
 {% extends 'quize/base.html' %}
 
+
+{% url 'admin:jsi18n' as jsi18nurl %} <script type="text/javascript" src="{{ jsi18nurl }}"></script>
+{% load admin_static %}
+{% block extrahead %}{{ block.super }}
+	<link rel="stylesheet" type="text/css" href="{{ ADMIN_MEDIA_PREFIX }}css/base.css" />
+	<link rel="stylesheet" type="text/css" href="{{ ADMIN_MEDIA_PREFIX }}css/widgets.css" />
+	<script type="text/javascript" src="/jsi18n/"></script>
+	<script type="text/javascript" src="{{ ADMIN_MEDIA_PREFIX }}js/core.js"></script>
+{{ form.media }}
+{% endblock %}
+
 {% block content %}
-    <h1>Введите код участника</h1>
+    <h1>{{title}}</h1>
     <form method="POST" class="post-form">{% csrf_token %}
-        {{ form.as_p }}
+        {{ form }}
         <button type="submit" class="save btn btn-default">Save</button>
     </form>
 {% endblock %}
