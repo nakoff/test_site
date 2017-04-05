@@ -20,7 +20,6 @@ def add_user(request):
 	args.update(csrf(request))
 	if request.method == "POST":
 		form = UserForm(request.POST)
-		print (form)
 		if form.is_valid():
 			u = form.save()
 			return redirect('add_cat', pk=u.id)
@@ -33,12 +32,9 @@ def add_cat(request, pk):
 	if request.method == "POST":
 		form = CategoryForm(request.POST)
 		user = get_object_or_404(User, pk=pk)
-		print("-----------------------------------")
 		print(request.POST)
 		print(request.POST.get('cat'))
 		if form.is_valid():
-			print("====================================")
-			print(pk)
 			cat = form.save(commit=False)
 			cat.user = user
 			cat.save()
@@ -62,3 +58,21 @@ def add_cont(request, pk):
 	else:
 		form = ContestForm()
 		return render(request, 'quize/add_user.html', {'form': form, 'title':title})
+
+
+def user_edit(request, pk):
+	title = "введите свой персональный код"
+	user = get_object_or_404(User, pk=pk)
+	if request.method == "POST":
+		form = UserForm(request.POST, instance=user)
+		if form.is_valid():
+			user = form.save()
+			return redirect('user_detail', pk=user.pk)
+	else:
+		form = UserForm(instance=user)
+		return render(request, 'quize/add_user.html', {'form': form, 'title':title})
+
+def user_remove(request, pk):
+	user = get_object_or_404(User, pk=pk)
+	user.delete()
+	return redirect('/')

@@ -3,7 +3,8 @@
 {% block content %}
     <h1>{{title}}</h1>
     <form method="POST" class="post-form">{% csrf_token %}
-        {{ form }}
+        {{ form.as_ul }}
+        <br><br>
         <button type="submit" class="save btn btn-default">Выбрать</button>
     </form>
 {% endblock %}

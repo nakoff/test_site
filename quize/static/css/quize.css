@@ -38,6 +38,20 @@ h4 {
     color: #00619e;
 }
 
+h5 {
+    font-family: 'Neucha', cursive;
+    color: #fa2363;
+}
+
+h6.edit {
+    font-family: 'Neucha', cursive;
+    color: #00619e;
+}
+h6.delete {
+    font-family: 'Neucha', cursive;
+    color: #fa2363;
+}
+
 .user {
     float: right;
     color: #FCA205;

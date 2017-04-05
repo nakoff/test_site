@@ -1,8 +1,9 @@
 {% extends 'quize/base.html' %}
 
 {% block content %}
-	<h1>Принять участие в мониторинге?</h1>
-	<a href="{% url 'add_user' %}" ><h1><p class="butt"> Да<span class="glyphicon glyphicon-plus"></p></h1></span></a>
+	<h1>Принять участие в мониторинге?
+	<a class="btn btn-default" href="{% url 'add_user' %}" ><h1>Да<span class="glyphicon glyphicon-ok"></h1></span></a>
+	</h1>
 	<br><br>
 	<p><h3>___________Все участники_____________</h3></p>
 	{% if user|length == 0 %}
