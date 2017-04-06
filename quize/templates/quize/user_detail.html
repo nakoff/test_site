@@ -4,12 +4,15 @@
         <div class="post">
 
             <div class="user">
-                <p>
-                    <h1>Участник: {{ user }}
+            <div class="panel panel-success">
+                 <div class="panel-heading">
+                    <h1>Участник: {{ user }}</h1>
+                </div>
+                    <h1>
                         <a class="btn btn-default" href="{% url 'user_edit' pk=user.pk  %}"><h6 class="edit"><span class="glyphicon glyphicon-pencil">изменить</span></h6></a>
                         <a class="btn btn-default" href="{% url 'user_remove' pk=user.pk %}"><h6 class="delete"><span class="glyphicon glyphicon-remove">удалить участника</span></h6></a>
                     </h1>
-                </p>
+            </div>
             </div>
              
 
@@ -30,12 +33,15 @@
                         <h4><p>_______________________________</p></h4>
                     {% endif %}
                 {% endfor %}
-            </div>
-            </div>
-            <div class="back">
+
                 <h1>
                 <a class="btn btn-default" href="/"><h3><span class="glyphicon glyphicon-arrow-left">Назад</span></h3></a>
                 </h1>
+
+            </div>
+            </div>
+            <div class="back">
+
             </div>
         </div>
     {% endblock %}
