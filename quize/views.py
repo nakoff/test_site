@@ -40,7 +40,7 @@ def add_cat(request, pk):
 			cat.save()
 			return redirect('add_cont', pk=cat.id)
 		else:
-			return redirect('add_cont', pk=cat.id)
+			return redirect('/')
 	else:
 		form = CategoryForm()
 		return render(request, 'quize/add_user.html', {'form': form, 'title':title})
@@ -50,11 +50,17 @@ def add_cont(request, pk):
 	if request.method == "POST":
 		form = ContestForm(request.POST)
 		cat = get_object_or_404(Category, pk=pk)
+		print("------------------------------------")
+		print (pk)
+		print (cat.user.pk)
+		print("------------------------------------")
 		if form.is_valid():
 			cont = form.save(commit=False)
 			cont.cat = cat
 			cont.save()
-			return redirect('/')
+			
+			#user = get_object_or_404(User, pk=cat.user.pk)
+			return redirect('user_detail', pk=cat.user.pk)
 	else:
 		form = ContestForm()
 		return render(request, 'quize/add_user.html', {'form': form, 'title':title})
