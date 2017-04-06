@@ -6,12 +6,13 @@
             <div class="user">
             <div class="panel panel-success">
                  <div class="panel-heading">
-                    <h1>Участник: {{ user }}</h1>
+                    <h1><i class="fa fa-user" aria-hidden="true"></i>Участник: {{ user }}</h1>
                 </div>
                     <h1>
-                        <a class="btn btn-default" href="{% url 'user_edit' pk=user.pk  %}"><h6 class="edit"><span class="glyphicon glyphicon-pencil">изменить</span></h6></a>
-                        <a class="btn btn-default" href="{% url 'user_remove' pk=user.pk %}"><h6 class="delete"><span class="glyphicon glyphicon-remove">удалить участника</span></h6></a>
+                        <a class="btn btn-default" href="{% url 'user_edit' pk=user.pk  %}"><h6 class="edit"><span class="fa fa-cog fa-spin"></span> изменить</h6></a>
+                        <a class="btn btn-default" href="{% url 'user_remove' pk=user.pk %}"><h6 class="delete"><span class="fa fa-user-times"> удалить участника</span></h6></a>
                     </h1>
+
             </div>
             </div>
              
@@ -20,8 +21,8 @@
 
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h1>Конкурсы:</h1>
-                        <a class="btn btn-default" href="{% url 'add_cat' pk=user.pk  %}">Добавить конкурс:<span class="glyphicon glyphicon-pencil"></span></a>
+                    <h1><i class="fa fa-graduation-cap" aria-hidden="true"></i>Конкурсы:</h1>
+                        <h3><a class="btn btn-default" href="{% url 'add_cat' pk=user.pk  %}"><span class="fa fa-plus"> Добавить конкурс</span></a></h3>
                 </div>
 
                 {% for k in cont  %}
@@ -35,7 +36,7 @@
                 {% endfor %}
 
                 <h1>
-                <a class="btn btn-default" href="/"><h3><span class="glyphicon glyphicon-arrow-left">Выход</span></h3></a>
+                    <a class="btn btn-default" href="/"><h3><i class="glyphicon glyphicon-arrow-left">Выход</i></h3></a>
                 </h1>
 
             </div>

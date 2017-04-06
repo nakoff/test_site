@@ -82,3 +82,8 @@ def user_remove(request, pk):
 	user = get_object_or_404(User, pk=pk)
 	user.delete()
 	return redirect('/')
+
+def user_results(request):
+	cont = Contest.objects.all()
+	user = User.objects.all()
+	return render(request, 'quize/results.html', {'cont':cont, 'user':user})
