@@ -11,6 +11,7 @@ body {
 .page-header {
     background-color: #ff9400;
     margin-top: 0;
+    margin-bottom: 0;
     padding: 20px 20px 20px 40px;
 }
 
@@ -21,7 +22,8 @@ body {
 }
 
 .container {
-    width: 100%
+    width: 100%;
+    background-color: #a2a591;
 }
 
 h1, h2 {
@@ -55,6 +57,7 @@ h6.delete {
 .user {
     float: right;
     color: #FCA205;
+    margin-top: 10px;
 }
 
 .back {
@@ -88,4 +91,17 @@ h6.delete {
 .butt h1 a, .butt h1 a:visited {
     color: #2a8d9c;
     border: 2px;
+}
+
+.panel-primary {
+    margin-top: 10px;
+}
+
+.panel-success {
+    border-color: #e76200;
+    border-width: 3px;
+}
+
+.panel-heading.radius {
+    border-radius: 50px;
 }
