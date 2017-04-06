@@ -13,22 +13,25 @@
             </div>
              
 
-             <div class="save">
-                <h1>Конкурсы:</h1>
-                    <a class="btn btn-default" href="{% url 'add_cat' pk=user.pk  %}">Добавить конкурс:<span class="glyphicon glyphicon-pencil"></span></a>
-                <p>_______________________________</p>
+            <div class="save">
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h1>Конкурсы:</h1>
+                        <a class="btn btn-default" href="{% url 'add_cat' pk=user.pk  %}">Добавить конкурс:<span class="glyphicon glyphicon-pencil"></span></a>
+                </div>
 
                 {% for k in cont  %}
                     {% if k.cat.user == user %}
-                        <h3><p>категория: {{k.cat}}</p></h3>
+                        <h3><p align="center">категория: {{k.cat}}</p></h3>
                         <h4><p align="center">название конкурса: <b>{{k.name}}</b></p></h4>
                         <h4><p align="center">дата проведения: <b>{{k.day}}/{{k.mont}}/{{k.year}} года</b></p></h4>
                         <h4><p align="center">занятое место: <b>{{k.result}}</b></p></h4>
                         <h4><p>_______________________________</p></h4>
                     {% endif %}
                 {% endfor %}
-             </div>
-
+            </div>
+            </div>
             <div class="back">
                 <h1>
                 <a class="btn btn-default" href="/"><h3><span class="glyphicon glyphicon-arrow-left">Назад</span></h3></a>
